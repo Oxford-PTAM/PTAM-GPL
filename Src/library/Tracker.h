@@ -29,7 +29,7 @@
 #include <sstream>
 #include <vector>
 #include <list>
-
+#include <unistd.h>
 
 class TrackerData;
 struct Trail    // This struct is used for initial correspondences of the first stereo pair.

@@ -1,0 +1,9 @@
+*.~
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+*.pb.cc
+*.pb.h
+*.a
+*.so
+Makefile

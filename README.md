@@ -13,6 +13,39 @@ Vision Laboratory of the University of Oxford, as described in the following pap
 - Georg Klein and David Murray, "Parallel Tracking and Mapping for Small AR Workspaces", Proc. ISMAR 2007
 - Georg Klein and David Murray, "Improving the Agility of Keyframe-based SLAM", Proc. ECCV 2008
 
+Building PTAM
+------------
+This library comes with a cmake script for Ubuntu Linux (cmake required).  It can be modified to work on other systems.
+
+This system depends on libCVD, TooN, GVars, BLAS, LAPACK, Opencv and libGL.  These libraries can be found at the links below:
+
+TooN (should be installed first)
+https://github.com/edrosten/TooN
+
+LibCVD
+https://github.com/edrosten/libcvd
+
+GVars
+https://github.com/edrosten/gvars
+
+BLAS
+http://www.netlib.org/blas/
+(also available on Ubuntu Linux as libblas-dev)
+
+LAPACK
+http://www.netlib.org/lapack/
+(also available on Ubuntu Linux as liblapack-dev)
+
+OpenCV
+http://opencv.org/downloads.html
+(also available on Ubuntu Linux as libopencv-core-dev)
+
+libGL
+Depends on operating system
+(Available on Ubuntu Linux as libgl1-mesa-dev)
+
+If opencv dependency is undesirable, other video source files can be found here:
+http://ewokrampage.wordpress.com/video-sources/
 
 Previous PTAM release
 ---------------------
