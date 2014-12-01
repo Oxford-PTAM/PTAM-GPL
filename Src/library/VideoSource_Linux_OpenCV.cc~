@@ -54,6 +54,7 @@ VideoCapture* cap = (VideoCapture*)mptr;
   cout << "  ... got video source." << endl;
 //Grab first frame to get size
 Mat frame;
+VideoCapture* cap = (VideoCapture*)mptr;
 *cap >> frame;
 
 mirSize = ImageRef(frame.cols, frame.rows);
