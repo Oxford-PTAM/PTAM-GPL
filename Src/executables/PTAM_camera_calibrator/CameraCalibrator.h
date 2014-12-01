@@ -7,12 +7,13 @@
 #include "VideoSource.h"
 #include <gvars3/gvars3.h>
 #include <vector>
+#include <string>
 #include "GLWindow2.h"
 
 class CameraCalibrator
 {
 public:
-  CameraCalibrator();
+  CameraCalibrator(std::string inputVideoSourceString);
   void Run();
   
 protected:

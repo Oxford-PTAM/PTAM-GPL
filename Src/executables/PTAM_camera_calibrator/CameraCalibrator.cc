@@ -5,18 +5,32 @@
 #include <TooN/SVD.h>
 #include <fstream>
 #include <stdlib.h>
+#include <string>
 
 using namespace CVD;
 using namespace std;
 using namespace GVars3;
 
-int main()
+int main(int argc, char **argv)
 {
   cout << "  Welcome to CameraCalibrator " << endl;
   cout << "  -------------------------------------- " << endl;
   cout << "  Parallel tracking and mapping for Small AR workspaces" << endl;
   cout << "  Copyright (C) Isis Innovation Limited 2008 " << endl;
   cout << endl;  
+
+string videoStreamSource; 
+  if(argc > 1)
+  {
+    videoStreamSource = string(argv[1]);
+    cout << "Using video data from file: " << videoStreamSource << endl;
+  }
+  else
+  {
+    cout << "Using video data from default video device on this machine" << endl;
+  }
+
+
   cout << "  Parsing calibrator_settings.cfg ...." << endl;
   
   GUI.LoadFile("calibrator_settings.cfg");
@@ -28,7 +42,7 @@ int main()
 
   try
     {
-      CameraCalibrator c;
+      CameraCalibrator c(videoStreamSource);
       c.Run();
     }
   catch(CVD::Exceptions::All e)
@@ -42,8 +56,8 @@ int main()
 
 
 
-CameraCalibrator::CameraCalibrator()
-  :mGLWindow(mVideoSource.Size(), "Camera Calibrator"), mCamera("Camera")
+CameraCalibrator::CameraCalibrator(std::string inputVideoSourceString)
+  :mVideoSource(inputVideoSourceString), mGLWindow(mVideoSource.Size(), "Camera Calibrator"), mCamera("Camera")
 {
   mbDone = false;
   GUI.RegisterCommand("CameraCalibrator.GrabNextFrame", GUICommandCallBack, this);

@@ -15,13 +15,14 @@
 #include <cvd/image.h>
 #include <cvd/byte.h>
 #include <cvd/rgb.h>
+#include <string>
 
 struct VideoSourceData;
 
 class VideoSource
 {
  public:
-  VideoSource();
+  VideoSource(std::string inputVideoSourceString = "");
   void GetAndFillFrameBWandRGB(CVD::Image<CVD::byte> &imBW, CVD::Image<CVD::Rgb<CVD::byte> > &imRGB);
   CVD::ImageRef Size();
   
