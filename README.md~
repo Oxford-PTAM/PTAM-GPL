@@ -48,8 +48,7 @@ If opencv dependency is undesirable, other video source files can be found here:
 http://ewokrampage.wordpress.com/video-sources/
 
 Calibration
----------------------
-The PTAM calibrator will process recorded video files if they are given as an argument to the calibration.  If no argument is given, the calibrator will use the default video device on your machine.
+
 
 Previous PTAM release
 ---------------------
